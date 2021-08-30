@@ -1,14 +1,88 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Form Biglietto Treno</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Biglietto treno</title>
 </head>
+
 <body>
+    <div id="bg">
+        <div class=" container vh-100">
+            <div class="bg-green pb-4 mt-4 rounded">
+                <!-- informazioni passeggero -->
+                <section id="passenger-info">
+                    <h1 class="text-center text-white fw-bold pt-3">CALCOLA IL PREZZO DEL TUO BIGLIETTO:</h1>
+                    <div class="row justify-content-between my-5 gy-3 gy-xl-0 px-3">
+                        
+                        <div class="col-12 col-xl-4 ">
+                            <label class="text-white" for="name">Nome Passeggero:</label>
+                            <input class="placeholder" type="text" id="name">
+                        </div>
+
+                        <div class="col-12 col-xl-4 text-xl-center">
+                            <label class="text-white" for="kms">Distanza in kms:</label>
+                            <input class="placeholder" type="number" id="kms" min="20" step="5" value="15">
+                        </div>
+
+                        <div class="col-12 col-xl-4 text-xl-end">
+                            <label class="text-white" for="age-group">Fascia d'età:</label>
+                            <select class="placeholder" id="age-group">
+                                <option value="min-18">Minorenne</option>
+                                <option selected value="maj-18">Maggiorenne</option>
+                                <option value="over-65">Over 65</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+                <section id="button-section">
+                    <div class="row ">
+                        <!-- genera tiket -->
+                        <div class="col text-end">
+                            <button id="button-generate-ticket" type="button" class="btn btn-light">Genera
+                                biglietto</button>
+                        </div>
+                        <!-- Bottone reset -->
+                        <div class="col">
+                            <button id="button-reset" type="button" class="btn btn-light">Resetta
+                                dati</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <hr class="my-5">
+            <!-- Tiket passeggero -->
+            <section class="hidden" id="ticket-info">
+                <h2 class="text-green fw-bold py-3">IL TUO BIGLIETTO:</h2>
+                <div class="row justify-content-center">
+                    <p id="cell-name" class="text-center col-12 col-xl-2 pt-4 row bg-white-smoke">
+                        <strong>Nome
+                            passeggero:</strong><span id="passenger-name" class="pb-5"></span>
+                    </p>
+                    <p id="cell-discount" class="text-center col-12 col-xl-2 pt-4 row bg-ligh-gray">
+                        <strong>Offerta:</strong><span id="discount-applied" class="pb-5"></span>
+                    </p>
+                    <p id="cell-car" class="text-center col-12 col-xl-2 pt-4 row bg-white-smoke">
+                        <strong>Carrozza:</strong><span id="train-car" class="pb-5"></span>
+                    </p>
+                    <p id="cell-code" class="text-center col-12 col-xl-2 pt-4 row bg-ligh-gray">
+                        <strong>Codice
+                            treno:</strong><span id="train-code" class="pb-5"></span>
+                    </p>
+                    <p id="cell-price" class="text-center col-12 col-xl-2 pt-4 row bg-white-smoke">
+                        <strong>Prezzo:</strong><span id="price-ticket" class="pb-5"></span>
+                    </p>
+                </div>
+            </section>
+        </div>
+    </div>
     
-    <script src="js/main.js"></script>
+    <script src="./js/script.js"></script>
 </body>
+
 </html>
